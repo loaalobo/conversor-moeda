@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imersão Dev</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="conteiner">
+
+        <div id="cabeçalho">
+            <div class="título">
+                <h1>Conversor de moedas</h1>
+                <p style="color: rgb(126, 126, 126); font-size:20px">por Lorena Lobo</p>
+                <h2>Imersão dev_</h2>
+            </div>
+            <div class="logo">
+                <img src="img/logo-alura.png" alt="logo alura" title="logo da escola alura">
+            </div>
+        </div>
+
+        <div id="corpo">
+            <div class="conteúdo">
+                    <p>Informe o valor em dólar que deseja converter:</p>
+                    <p><input type="number" class="txtValorEmDolar"></p>
+                    <p><input type="button" value="Converter" onclick="converter()"></p>
+            </div>
+            <div class="conteúdo">
+                <div id="res">
+                    Resultado:
+                </div>
+            </div>
+        </div>
+
+        <div class="rodapé">
+            <footer>
+                <a href="https://github.com/loaalobo?tab=repositories" target="_blank" rel="external" title="clique aqui para acessar meu repositório público no github"><img src="img/gh.png" alt="imagem da logo github" class="meuGithub"></a>
+            </footer>
+            <div class="link">
+                <p>Links úteis:
+                    <ul type="none">
+                        <li>Dólar e câmbio: acompanhe a <strong><em>cotação do dia</em></strong> em <a href="https://www.infomoney.com.br/ferramentas/cambio/" target="_blank" rel="external" class="link">infomoney.com</a></li>
+                        <li>Panorama econômico: <a href="https://www.bcb.gov.br/" target="_blank" rel="external" class="link">Banco Central do Brasil</a></li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function converter() {
+        var hoje = new Date()
+        var dia = hoje.getDate()
+        var mes = hoje.getMonth()
+        var ano = hoje.getFullYear()
+        var valor = document.querySelector('input.txtValorEmDolar')
+        var resul = document.querySelector('div#res')
+
+        var valorEmReal = Number(valor.value) * 5.50
+        var mesReal = Number(mes) + 1
+        var valorEmRealFixado = valorEmReal.toFixed(2) //fixa que o valor terá apenas 2 casas decimais (é o ideal quando se trata de dinheiro)
+
+        res.innerHTML = `O valor informado equivale a R$ ${valorEmRealFixado} reais na cotação média do dia ${dia}/${mesReal}/${ano}.`
+        }
+    </script>    
+
+</body>
+
+</html>
